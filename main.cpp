@@ -23,9 +23,9 @@ int menu(){
     int input;
 
     cout << "===== Tic-Tac-Toe-AI =====" << endl;
-    cout << "  1. 2 Player" << endl;
-    cout << "  2. 1 Player (Weak AI)" << endl;
-    cout << "  3. 1 Player (Strong AI)" << endl << endl;
+    cout << "  1. Two Player" << endl;
+    cout << "  2. One Player (Weak AI)" << endl;
+    cout << "  3. One Player (Strong AI)" << endl << endl;
     cout << "Choice: ";
     cin >> input;
 
