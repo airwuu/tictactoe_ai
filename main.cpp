@@ -70,7 +70,7 @@ GameState p1w(GameState game){
             y = move.y;
         }
         else{
-            cout << "invalid move, try again"<< endl;
+            cout << endl;
             cout << "Enter move for (" << (!game.currentTurn ? "X" : "O") << "): ";
             cin >> x >> y;
         }
@@ -94,7 +94,7 @@ GameState p1s(GameState game){
             y = move.y; 
         } 
         else{ 
-            cout << "invalid move, try again"<< endl;
+            cout << endl;
             cout << "Enter move for (" << (!game.currentTurn ? "X" : "O") << "): "; 
             cin >> x >> y; 
         }
