@@ -1,19 +1,11 @@
 #include <iostream>
 #include "GameState.h"
+#include "WeakAI.h"
 
 using namespace std;
 
-// Weak AI Logic
-Vec validMove(GameState game){
-    for (int i = 0; i < game.size; i++){
-        for (int j = 0; j < game.size; j++){
-            if (game.grid[i][j] == -1){
-                return Vec(i, j);
-            }
-        }
-    }
-    return Vec(0,0);
-}
+// // Weak AI Logic
+//i moved it into another file
 
 // Strong AI Logic
 
