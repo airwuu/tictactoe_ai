@@ -60,11 +60,6 @@ GameState p1w(GameState game){
             Vec move = validMove(game);
             x = move.x;
             y = move.y;
-            //  Node* root = new Node(game);
-            // populate(root);
-            // Vec move = aiMove(root,0);
-            // x = move.x; 
-            // y = move.y; 
         }
         else{
             cout << endl;
@@ -86,12 +81,20 @@ GameState p1s(GameState game){
         int x, y;
 
         if (game.currentTurn){
-
-             Node* root = new Node(game);
-            populate(root);
-            Vec move = aiMove(root,0);
-            x = move.x; 
-            y = move.y; 
+            cout<<"Current turn count: "<<game.turnCount<<"\n";
+            if((game.turnCount == 1) && (game.grid[1][1] != -1)){
+                Vec move = validMove(game);
+                x = move.x;
+                y = move.y;
+            }
+            else{
+                Node* root = new Node(game);
+                populate(root);
+                Vec move = aiMove(root,0);
+                x = move.x; 
+                y = move.y; 
+            }
+            
         }
         else{
             cout << endl;

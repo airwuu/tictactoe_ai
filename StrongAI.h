@@ -39,24 +39,24 @@ Node* populate(Node* root, int height = 0){
     return root;
 }
 
-void printWinningBoards(Node* root, int playerNum = 0) {
-    if (root == nullptr) {
-        return;
-    }
-    if (root->children.empty()) {
-        if(root->data.hasWon(playerNum)){
-            std::cout << "Height: "<< root->height << " \n";
-            std::cout << root->data << " \n";
-        } 
-    } 
-    else {
-        for (Node* child : root->children) {
-            printWinningBoards(child, playerNum);
-        }
-    }
-}
+// void printWinningBoards(Node* root, int playerNum = 0) {
+//     if (root == nullptr) {
+//         return;
+//     }
+//     if (root->children.empty()) {
+//         if(root->data.hasWon(playerNum)){
+//             std::cout << "Height: "<< root->height << " \n";
+//             std::cout << root->data << " \n";
+//         } 
+//     } 
+//     else {
+//         for (Node* child : root->children) {
+//             printWinningBoards(child, playerNum);
+//         }
+//     }
+// }
 
-Node* findMinHeight(Node* root) {
+Node* findMinHeight(Node* root, int playerNum = 0) {
     if (root == nullptr) {
         return nullptr;
     }
@@ -70,15 +70,16 @@ Node* findMinHeight(Node* root) {
     for (Node* child : root->children) {
         Node* leaf = findMinHeight(child); 
         if (leaf != nullptr && (minLeaf == nullptr || leaf->height < minLeaf->height)) {
-            minLeaf = leaf;
+            if(leaf->data.hasWon(playerNum)){
+                minLeaf = leaf;
+            }
         }
     }
     
     return minLeaf;
 }
 Vec aiMove(Node* root, int playerNum = 0) {
-    Node* poggers = findMinHeight(root);
-    std::cout << poggers->imoves[0] << poggers->jmoves[0]<<" \n";
+    Node* poggers = findMinHeight(root, playerNum);
     Vec thing = Vec(poggers->imoves[0], poggers->jmoves[0]);
     return thing;
 }
