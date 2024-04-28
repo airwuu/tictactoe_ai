@@ -1,6 +1,7 @@
 #include <iostream>
 #include "GameState.h"
 #include "WeakAI.h"
+#include "StrongAI.h"
 
 using namespace std;
 
@@ -13,7 +14,6 @@ using namespace std;
 // Menu
 int menu(){
     int input;
-
     cout << "===== Tic-Tac-Toe-AI =====" << endl;
     cout << "  1. Two Player" << endl;
     cout << "  2. One Player (Weak AI)" << endl;
@@ -60,6 +60,11 @@ GameState p1w(GameState game){
             Vec move = validMove(game);
             x = move.x;
             y = move.y;
+            //  Node* root = new Node(game);
+            // populate(root);
+            // Vec move = aiMove(root,0);
+            // x = move.x; 
+            // y = move.y; 
         }
         else{
             cout << endl;
@@ -74,22 +79,27 @@ GameState p1w(GameState game){
 
 // 1 Player Strong
 GameState p1s(GameState game){
-    while(!game.done){ 
-        system("clear"); 
+    while(!game.done){
+        system("clear");
         cout << game << endl;
 
-        int x, y; 
+        int x, y;
 
-        if(game.currentTurn){ 
-            Vec move = validMove(game); 
+        if (game.currentTurn){
+
+             Node* root = new Node(game);
+            populate(root);
+            Vec move = aiMove(root,0);
             x = move.x; 
             y = move.y; 
-        } 
-        else{ 
-            cout << endl;
-            cout << "Enter move for (" << (!game.currentTurn ? "X" : "O") << "): "; 
-            cin >> x >> y; 
         }
+        else{
+            cout << endl;
+            cout << "Enter move for (" << (!game.currentTurn ? "X" : "O") << "): ";
+            cin >> x >> y;
+        }
+
+        game.play(x, y);
     }
     return game;
 }
@@ -98,7 +108,6 @@ GameState p1s(GameState game){
 int main(){
     GameState game;
     int gameType;
-
     gameType = menu();
 
     // Run Game Type
