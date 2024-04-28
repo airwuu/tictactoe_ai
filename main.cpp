@@ -14,7 +14,6 @@ using namespace std;
 // Menu
 int menu(){
     int input;
-
     cout << "===== Tic-Tac-Toe-AI =====" << endl;
     cout << "  1. Two Player" << endl;
     cout << "  2. One Player (Weak AI)" << endl;
@@ -109,7 +108,6 @@ GameState p1s(GameState game){
 int main(){
     GameState game;
     int gameType;
-    cout<<"hellooooo";
     gameType = menu();
 
     // Run Game Type
