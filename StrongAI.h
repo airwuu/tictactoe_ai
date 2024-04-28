@@ -14,7 +14,7 @@ struct Node{
     Node(GameState board){
         data = board;
     }
-}
+};
 
 void addChild(Node* parent, Node* child) {
     parent->children.push_back(child);
