@@ -44,6 +44,10 @@ int main(){
     // } while(keepGoing == 0);
 
     while(keepGoing == 0) { 
+        // reset game
+        GameState newGame;
+        game = newGame;
+
         int gameType;
         gameType = theMenu(menu);
         mainMenu menu;
