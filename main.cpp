@@ -9,45 +9,44 @@ using namespace std;
 
 // Menu
 int theMenu(mainMenu menu){
+    // initialize input
     int input;
+    // Menu
     cout << menu << endl;
+    // get input
     cin >> input;
-
+    // return input
     return input;
 }
 
 // Run game
 int main(){
+    // Initialize GameState
     GameState game;
+    // initialize loop variable
     int keepGoing = 0;
+    // clear terminal
     system("clear");
+    // Initialize mainMenu
     mainMenu menu;
 
-    // Run Game Type
-    // while(gameType != 6){
-    //     menu.runGameType(gameType, game);
-    // }
-
-    // Loop the game 
-    // do { 
-    //     // print menu 
-    //     system("clear");
-    //     cout << menu << endl;
-    //     menu.runGameType(gameType, game);
-    //     keepGoing = menu.willContinue();
-    // } while(keepGoing == 0);
-
+    // LOOP GAME
     while(keepGoing == 0) { 
-        // reset game
+        // reset game state
         GameState newGame;
         game = newGame;
 
+        // Initialize game type
         int gameType;
+        // Call input and calls the menu
         gameType = theMenu(menu);
+        // Clear terminal for UI
         system("clear");
+        // Displays menu
         cout << menu << endl;
+        // Run game type
         menu.runGameType(gameType, game, menu);
-
+        // Allow the user to continue
         keepGoing = menu.willContinue();
     }
     return 0;

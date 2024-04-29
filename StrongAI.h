@@ -110,11 +110,11 @@ Node* findMinHeight(Node* root, int playerNum) {
     return minLeaf;
 }
 
-// function to find the best move for the AI
+// function to find the best move for the AI (ALSO TAKES THE SHORTEST PATH)
 Vec aiMove(Node* root, int playerNum = 1) {
-    // Find the minimum height of a winning board
+    // Find the minimum height of a winning board 
     Node* poggers = findMinHeight(root, playerNum);
-    // Return the first move of the winning board
+    // Return the first move of the winning board 
     Vec thing = Vec(poggers->imoves[0], poggers->jmoves[0]);
     // return
     return thing;

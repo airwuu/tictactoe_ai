@@ -16,6 +16,7 @@ struct mainMenu;
 
 // Create main menu 
 struct mainMenu{ 
+    // Instantiate Object Variables
     int choice; 
     int gamesPlayedRegular;
     int xWinsRegular;
@@ -32,6 +33,7 @@ struct mainMenu{
 
     // Create Constructor
     mainMenu(){ 
+        // Initialize Variables to ZERO
         choice = 0;
         gamesPlayedRegular = 0;
         xWinsRegular = 0;
@@ -79,7 +81,9 @@ struct mainMenu{
 
     // Clear Stats
     void clearStats(){ 
+        // Clear Terminal
         system("clear");
+        // Reset Object Variables to Zero
         gamesPlayedRegular = 0;
         xWinsRegular = 0;
         oWinsRegular = 0;
@@ -157,7 +161,9 @@ struct mainMenu{
 
     // display gameStats
     void gameStats(){ 
+        // Clear Terminal
         system("clear");
+        // Display Statistics
         cout << "Game Statistics" << endl;
         cout << "----------------" << endl;
         cout << "Total Games Played: " << gamesPlayedRegular << endl;
@@ -186,20 +192,26 @@ struct mainMenu{
 
     // enter to continue function
     int willContinue(){ 
+        // Create Player Choice variable
         int playerChoice;
+        // Display Prompt
         cout << "Type 1 to exit or any other number to continue: ";
+        // Collect Input
         cin >> playerChoice;
+        // Conditional to determine if player wants to exit
         if(playerChoice == 1){
+            // Exit the game
             exit(0);
-            return 1;
         }
+        // Return 0 to continue
         return 0;
     }
 
     // run game type conditional
     void runGameType(int gameType, GameState& game, mainMenu& menu){ 
+        // Use switch statement to determine game played
         switch(gameType) {
-            case 1:
+            case 1: // Player vs. weak AI
                 game = p2(game);
                 // update stats
                 gamesPlayedRegular++;
@@ -220,7 +232,7 @@ struct mainMenu{
                     cout << "It's a tie" << endl;
                 }
                 break;
-            case 2:
+            case 2: // Player vs. Player
                 game = p1w(game);
                 // update stats
                 gamesPlayedPvAI++;
@@ -241,7 +253,7 @@ struct mainMenu{
                     cout << "It's a tie" << endl;
                 }
                 break;
-            case 3:
+            case 3: // Player vs Strong AI
                 game = p1s(game);
                 // update stats
                 gamesPlayedPvAI++;
@@ -274,7 +286,7 @@ struct mainMenu{
                 // exit program
                 exit(0);
                 break;
-            default: 
+            default: // Force player to reinput
                 cout << "Invalid choice" << endl;
                 break;
         }
