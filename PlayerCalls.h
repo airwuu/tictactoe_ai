@@ -32,21 +32,6 @@ GameState p2(GameState game, mainMenu menu){
     system("clear");
     cout << game << endl;
 
-    // Observe who won and update stats
-    if (game.hasWon(0)){
-        cout << "Player X has won" << endl;
-        menu.updateXWinsPVP();
-    }
-
-    else if (game.hasWon(1)){
-        cout << "Player O has won" << endl;
-        menu.updateOWinsPVP();
-    }
-    else {
-        menu.updateTiesPVP();
-        cout << "It's a tie" << endl;
-    }
-
     return game;
 }
 
@@ -74,21 +59,6 @@ GameState p1w(GameState game, mainMenu menu){
     // display final game state
     system("clear");
     cout << game << endl;
-
-    // Observe who won and update stats
-    if (game.hasWon(0)){
-        cout << "Player X has won" << endl;
-        menu.updateXWinsPvAI();
-    }
-
-    else if (game.hasWon(1)){
-        cout << "Player O has won" << endl;
-        menu.updateOWinsPvAI();
-    }
-    else {
-        menu.updateTiesPvAI();
-        cout << "It's a tie" << endl;
-    }
 
     return game;
 }
@@ -134,21 +104,6 @@ GameState p1s(GameState game, mainMenu menu){
     // display final game state
     system("clear");
     cout << game << endl;
-
-    // Observe who won and update stats
-    if (game.hasWon(0)){
-        cout << "Player X has won" << endl;
-        menu.updateXWinsPvAI();
-    }
-
-    else if (game.hasWon(1)){
-        cout << "Player O has won" << endl;
-        menu.updateOWinsPvAI();
-    }
-    else {
-        menu.updateTiesPvAI();
-        cout << "It's a tie" << endl;
-    }
 
     return game;
 }

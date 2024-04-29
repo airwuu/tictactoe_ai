@@ -10,6 +10,9 @@
 #include "WeakAI.h"
 
 using namespace std;
+// outline for mainMenu struct
+struct mainMenu;
+
 
 // Create main menu 
 struct mainMenu{ 
@@ -236,17 +239,54 @@ struct mainMenu{
         return 0;
     }
 
+    // observe winner
+    void theWinnerPVP(GameState game, mainMenu menu){ 
+            if (game.hasWon(0)){
+            cout << "Player X has won" << endl;
+            menu.updateXWinsPVP();
+        }
+
+        else if (game.hasWon(1)){
+            cout << "Player O has won" << endl;
+            menu.updateOWinsPVP();
+        }
+        else {
+            menu.updateTiesPVP();
+            cout << "It's a tie" << endl;
+        }
+    }
+
+    void theWinnerPvAI(GameState game, mainMenu menu){ 
+            if (game.hasWon(0)){
+            cout << "Player X has won" << endl;
+            menu.updateXWinsPvAI();
+        }
+
+        else if (game.hasWon(1)){
+            cout << "Player O has won" << endl;
+            menu.updateOWinsPvAI();
+        }
+        else {
+            menu.updateTiesPvAI();
+            cout << "It's a tie" << endl;
+        }
+    }
+    
+
     // run game type conditional
     void runGameType(int gameType, GameState& game, mainMenu& menu){ 
         switch(gameType) {
             case 1:
                 game = p2(game, menu);
+                theWinnerPVP(game, menu);
                 break;
             case 2:
                 game = p1w(game, menu);
+                theWinnerPvAI(game, menu);
                 break;
             case 3:
                 game = p1s(game, menu);
+                theWinnerPvAI(game, menu);
                 break;
             case 4: // show game stats
                 gameStats();
