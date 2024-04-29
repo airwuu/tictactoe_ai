@@ -2,7 +2,6 @@
 #include "GameState.h"
 #include "WeakAI.h"
 #include "StrongAI.h"
-#include "PlayerCalls.h"
 #include "mainMenu.h"
 
 using namespace std;
