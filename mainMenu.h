@@ -16,22 +16,20 @@ struct mainMenu;
 
 // Create main menu 
 struct mainMenu{ 
-    private:
-        int choice; 
-        int gamesPlayedRegular;
-        int xWinsRegular;
-        int oWinsRegular;
-        int tiesRegular;
-        int gamesPlayedPVP;
-        int xWinsPVP;
-        int oWinsPVP;
-        int tiesPVP;
-        int gamesPlayedPvAI; 
-        int xWinsPvAI;
-        int oWinsPvAI;
-        int tiesPvAI;
+    int choice; 
+    int gamesPlayedRegular;
+    int xWinsRegular;
+    int oWinsRegular;
+    int tiesRegular;
+    int gamesPlayedPVP;
+    int xWinsPVP;
+    int oWinsPVP;
+    int tiesPVP;
+    int gamesPlayedPvAI; 
+    int xWinsPvAI;
+    int oWinsPvAI;
+    int tiesPvAI;
 
-    public:
     // Create Constructor
     mainMenu(){ 
         choice = 0;
@@ -158,8 +156,8 @@ struct mainMenu{
     }
 
     // update functions
-    void updateGamesPlayedPVP(){ 
-        gamesPlayedPVP++;
+    void updateGamesPlayedPVP(mainMenu menu){ 
+        menu.gamesPlayedPVP++;
         gamesPlayedRegular++;
     }
 

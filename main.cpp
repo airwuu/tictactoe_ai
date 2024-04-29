@@ -7,12 +7,6 @@
 
 using namespace std;
 
-// // Weak AI Logic
-//i moved it into another file
-
-// Strong AI Logic
-
-
 // Menu
 int theMenu(mainMenu menu){
     int input;
