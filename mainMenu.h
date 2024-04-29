@@ -5,6 +5,8 @@
 #include <cmath>
 #include <cstdlib> 
 #include "GameState.h"
+#include "StrongAI.h"
+#include "WeakAI.h"
 
 using namespace std;
 
