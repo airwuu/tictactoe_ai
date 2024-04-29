@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cmath>
 #include <cstdlib> 
+#include "GameState.h"
 
 using namespace std;
 
@@ -224,8 +225,11 @@ struct mainMenu{
     void enterToContinue(){ 
         cout << "Press Enter to Continue...";
         cin.ignore();
-        cin.get();
     }
+
+    // run game type conditional
+    void()
+
 
     // friend << overloaded operator
     friend ostream& operator<<(ostream& os, mainMenu& menu);
