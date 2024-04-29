@@ -228,7 +228,32 @@ struct mainMenu{
     }
 
     // run game type conditional
-    void()
+    void runGameType(int gameType, GameState& game){ 
+        switch(gameType) {
+            case 1:
+                game = p2(game);
+                enterToContinue();
+                break;
+            case 2:
+                game = p1w(game);
+                enterToContinue();
+                break;
+            case 3:
+                game = p1s(game);
+                enterToContinue();
+                break;
+            case 4: // show game stats
+                gameStats();
+                enterToContinue();
+                break;
+            case 5: // clear game stats
+                clearStats();
+                enterToContinue();
+                break;
+            case 6:
+                break;
+        }
+    }
 
 
     // friend << overloaded operator
