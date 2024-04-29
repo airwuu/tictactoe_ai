@@ -37,13 +37,20 @@ int main(){
     // }
 
     // Loop the game 
-    do { 
-        // print menu 
+    // do { 
+    //     // print menu 
+    //     system("clear");
+    //     cout << menu << endl;
+    //     menu.runGameType(gameType, game);
+    //     keepGoing = menu.willContinue();
+    // } while(keepGoing == 0);
+
+    while(keepGoing == 0) { 
         system("clear");
         cout << menu << endl;
         menu.runGameType(gameType, game);
         keepGoing = menu.willContinue();
-    } while(keepGoing == 0);
+    }
 
     // After Game Finishes
     system("clear");
