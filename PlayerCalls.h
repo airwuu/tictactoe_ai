@@ -8,7 +8,7 @@
 using namespace std;
 
 // 2 Player
-GameState p2(GameState game, mainMenu menu){
+GameState p2(GameState game){
     while(!game.done){
         system("clear");
         cout << game << endl;
@@ -36,7 +36,7 @@ GameState p2(GameState game, mainMenu menu){
 }
 
 // 1 Player Weak
-GameState p1w(GameState game, mainMenu menu){
+GameState p1w(GameState game){
     while(!game.done){
         system("clear");
         cout << game << endl;
@@ -64,7 +64,7 @@ GameState p1w(GameState game, mainMenu menu){
 }
 
 // 1 Player Strong
-GameState p1s(GameState game, mainMenu menu){
+GameState p1s(GameState game){
     while(!game.done){
         system("clear");
         cout << game << endl;
