@@ -226,8 +226,16 @@ struct mainMenu{
 
     // enter to continue function
     int willContinue(){ 
-        cout << "Type 6 to exit or any other number to continue:";
-        cin >> choice;
+        int playerChoice;
+        cout << "Type 1 to exit or any other number to continue:";
+        cin >> playerChoice;
+        if(playerChoice == 1){
+            exit(0);
+            return 1;
+        }
+        else {
+            return 0;
+        }
     }
 
     // run game type conditional

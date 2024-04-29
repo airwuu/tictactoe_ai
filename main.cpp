@@ -26,6 +26,7 @@ int theMenu(mainMenu menu){
 int main(){
     GameState game;
     int gameType;
+    int keepGoing = 0;
     system("clear");
     mainMenu menu;
     gameType = theMenu(menu);
@@ -41,8 +42,8 @@ int main(){
         system("clear");
         cout << menu << endl;
         menu.runGameType(gameType, game);
-        gameType = menu.willContinue();
-    } while(gameType != 6);
+        keepGoing = menu.willContinue();
+    } while(keepGoing == 0);
 
     // After Game Finishes
     system("clear");
