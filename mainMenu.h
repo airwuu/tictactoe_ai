@@ -187,7 +187,7 @@ struct mainMenu{
     // enter to continue function
     int willContinue(){ 
         int playerChoice;
-        cout << "Type 1 to exit or any other number to continue:";
+        cout << "Type 1 to exit or any other number to continue: ";
         cin >> playerChoice;
         if(playerChoice == 1){
             exit(0);
