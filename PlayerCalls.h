@@ -28,6 +28,9 @@ GameState p2(GameState game){
 
         game.play(x, y);
     }
+    // display final game state
+    system("clear");
+    cout << game << endl;
 
     return game;
 }
@@ -53,6 +56,9 @@ GameState p1w(GameState game){
 
         game.play(x, y);
     }
+    // display final game state
+    system("clear");
+    cout << game << endl;
     return game;
 }
 
@@ -94,6 +100,9 @@ GameState p1s(GameState game){
 
         game.play(x, y);
     }
+    // display final game state
+    system("clear");
+    cout << game << endl;
     return game;
 }
 
