@@ -233,9 +233,7 @@ struct mainMenu{
             exit(0);
             return 1;
         }
-        else {
-            return 0;
-        }
+        return 0;
     }
 
     // run game type conditional
