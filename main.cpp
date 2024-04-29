@@ -2,6 +2,7 @@
 #include "GameState.h"
 #include "WeakAI.h"
 #include "StrongAI.h"
+#include "mainMenu.h"
 
 using namespace std;
 
@@ -12,13 +13,9 @@ using namespace std;
 
 
 // Menu
-int menu(){
+int theMenu(mainMenu menu){
     int input;
-    cout << "===== Tic-Tac-Toe-AI =====" << endl;
-    cout << "  1. Two Player" << endl;
-    cout << "  2. One Player (Weak AI)" << endl;
-    cout << "  3. One Player (Strong AI)" << endl << endl;
-    cout << "Choice: ";
+    cout << menu << endl;
     cin >> input;
 
     return input;
@@ -45,6 +42,7 @@ GameState p2(GameState game){
 
         game.play(x, y);
     }
+
     return game;
 }
 
@@ -75,7 +73,7 @@ GameState p1w(GameState game){
 // 1 Player Strong
 GameState p1s(GameState game){
     while(!game.done){
-        //system("clear");
+        system("clear");
         cout << game << endl;
 
         int x, y;
@@ -117,7 +115,9 @@ GameState p1s(GameState game){
 int main(){
     GameState game;
     int gameType;
-    gameType = menu();
+    system("clear");
+    mainMenu menu;
+    gameType = theMenu(menu);
 
     // Run Game Type
     switch(gameType) {
@@ -130,9 +130,14 @@ int main(){
         case 3:
             game = p1s(game);
             break;
+        case 4:
+            break;
+        case 5:
+            cout << "Exiting. . . Goodbye!" << endl;
+            return 0;
         default:
-            return 1;
-    }
+            cout << "Invalid choice. Please try again." << endl;
+    } while (gameType != 5);
 
     // After Game Finishes
     system("clear");

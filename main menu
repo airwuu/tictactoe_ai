@@ -21,17 +21,6 @@ void displayMenu() {
     cout << "Enter your choice: ";
 }
 
-Vec validMove(GameState game){
-    for (int i = 0; i < game.size; i++){
-        for (int j = 0; j < game.size; j++){
-            if (game.grid[i][j] == -1){
-                return Vec(i, j);
-            }
-        }
-    }
-    return Vec(0,0);
-}
-
 void playRegularGame(int& ties, int& xWins, int& oWins, int& gamesPlayed) {
     GameState game;
     while (!game.done) {
