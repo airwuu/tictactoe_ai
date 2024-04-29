@@ -250,7 +250,8 @@ struct mainMenu{
                 break;
             case 6:
                 cout << "exiting . . ." << endl;
-                exit;
+                // exit program
+                exit(0);
                 break;
             default: 
                 cout << "Invalid choice" << endl;
