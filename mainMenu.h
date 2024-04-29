@@ -227,7 +227,7 @@ struct mainMenu{
     // enter to continue function
     void enterToContinue(){ 
         cout << "Press Enter to Continue...";
-        cin.ignore();
+        cin >> choice;
     }
 
     // run game type conditional
@@ -254,6 +254,10 @@ struct mainMenu{
                 enterToContinue();
                 break;
             case 6:
+                cout << "exiting . . ." << endl;
+                break;
+            default: 
+                cout << "Invalid choice" << endl;
                 break;
         }
     }

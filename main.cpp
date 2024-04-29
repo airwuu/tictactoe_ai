@@ -31,9 +31,16 @@ int main(){
     gameType = theMenu(menu);
 
     // Run Game Type
-    while(gameType != 6){
+    // while(gameType != 6){
+    //     menu.runGameType(gameType, game);
+    // }
+
+    // Loop the game 
+    do { 
+        // print menu 
+        cout << menu << endl;
         menu.runGameType(gameType, game);
-    }
+    } while(gameType != 6);
 
     // After Game Finishes
     system("clear");
@@ -42,6 +49,7 @@ int main(){
     if (game.hasWon(0)){
         cout << "Player X has won" << endl;
     }
+
     else if (game.hasWon(1)){
         cout << "Player O has won" << endl;
     }
