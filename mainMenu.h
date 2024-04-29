@@ -207,14 +207,17 @@ struct mainMenu{
                 if(game.hasWon(0)){
                     xWinsRegular++;
                     xWinsPVP++;
+                    cout << "X Wins" << endl;
                 }
                 else if(game.hasWon(1)){
                     oWinsRegular++;
                     oWinsPVP++;
+                    cout << "O Wins" << endl;
                 }
                 else{
                     tiesRegular++;
                     tiesPVP++;
+                    cout << "It's a tie" << endl;
                 }
                 break;
             case 2:
@@ -225,14 +228,17 @@ struct mainMenu{
                 if(game.hasWon(0)){
                     xWinsRegular++;
                     xWinsPvAI++;
+                    cout << "X Wins" << endl;
                 }
                 else if(game.hasWon(1)){
                     oWinsRegular++;
                     oWinsPvAI++;
+                    cout << "O Wins" << endl;
                 }
                 else{
                     tiesRegular++;
                     tiesPvAI++;
+                    cout << "It's a tie" << endl;
                 }
                 break;
             case 3:
@@ -243,14 +249,17 @@ struct mainMenu{
                 if(game.hasWon(0)){
                     xWinsRegular++;
                     xWinsPvAI++;
+                    cout << "X Wins" << endl;
                 }
                 else if(game.hasWon(1)){
                     oWinsRegular++;
                     oWinsPvAI++;
+                    cout << "O Wins" << endl;
                 }
                 else{
                     tiesRegular++;
                     tiesPvAI++;
+                    cout << "It's a tie" << endl;
                 }
                 break;
             case 4: // show game stats
