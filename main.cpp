@@ -40,7 +40,7 @@ int main(){
         // print menu 
         cout << menu << endl;
         menu.runGameType(gameType, game);
-        menu.enterToContinue();
+        gameType = menu.willContinue();
     } while(gameType != 6);
 
     // After Game Finishes
