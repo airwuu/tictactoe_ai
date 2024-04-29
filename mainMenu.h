@@ -4,10 +4,10 @@
 #include <iostream>
 #include <cmath>
 #include <cstdlib> 
+#include "PlayerCalls.h"
 #include "GameState.h"
 #include "StrongAI.h"
 #include "WeakAI.h"
-#include "PlayerCalls.h"
 
 using namespace std;
 
