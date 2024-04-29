@@ -4,7 +4,6 @@
 #include "GameState.h"
 #include "StrongAI.h"
 #include "WeakAI.h"
-#include "mainMenu.h"
 
 using namespace std;
 
@@ -150,7 +149,7 @@ GameState p1s(GameState game, mainMenu menu){
         menu.updateTiesPvAI();
         cout << "It's a tie" << endl;
     }
-    
+
     return game;
 }
 
