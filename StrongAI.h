@@ -56,7 +56,7 @@ Node* populate(Node* root, int height = 0){
 //     }
 // }
 
-Node* findMinHeight(Node* root, int playerNum = 0) {
+Node* findMinHeight(Node* root, int playerNum) {
     if (root == nullptr) {
         return nullptr;
     }
@@ -68,9 +68,11 @@ Node* findMinHeight(Node* root, int playerNum = 0) {
 
     Node* minLeaf = nullptr;
     for (Node* child : root->children) {
-        Node* leaf = findMinHeight(child); 
-        if (leaf != nullptr && (minLeaf == nullptr || leaf->height < minLeaf->height)) {
-            if(leaf->data.hasWon(playerNum)){
+        Node* leaf = findMinHeight(child, playerNum);       
+        if (leaf != nullptr && (minLeaf == nullptr || leaf->height <= minLeaf->height)) {
+            if (leaf->data.hasWon(playerNum)) {
+                minLeaf = leaf;
+            } else if (minLeaf == nullptr &&!(leaf->data.hasWon(0)||leaf->data.hasWon(1))) {
                 minLeaf = leaf;
             }
         }
