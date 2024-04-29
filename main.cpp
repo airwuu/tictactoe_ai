@@ -38,6 +38,7 @@ int main(){
     // Loop the game 
     do { 
         // print menu 
+        system("clear");
         cout << menu << endl;
         menu.runGameType(gameType, game);
         gameType = menu.willContinue();
