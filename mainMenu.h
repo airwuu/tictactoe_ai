@@ -277,15 +277,15 @@ struct mainMenu{
     void runGameType(int gameType, GameState& game, mainMenu& menu){ 
         switch(gameType) {
             case 1:
-                game = p2(game, menu);
+                game = p2(game);
                 theWinnerPVP(game, menu);
                 break;
             case 2:
-                game = p1w(game, menu);
+                game = p1w(game);
                 theWinnerPvAI(game, menu);
                 break;
             case 3:
-                game = p1s(game, menu);
+                game = p1s(game);
                 theWinnerPvAI(game, menu);
                 break;
             case 4: // show game stats
