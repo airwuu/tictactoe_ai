@@ -70,17 +70,18 @@ Node* findMinHeight(Node* root, int playerNum) {
     for (Node* child : root->children) {
         Node* leaf = findMinHeight(child, playerNum);       
         if (leaf != nullptr && (minLeaf == nullptr || leaf->height <= minLeaf->height)) {
-            if (leaf->data.hasWon(playerNum)) {
-                minLeaf = leaf;
-            } else if (minLeaf == nullptr &&!(leaf->data.hasWon(0)||leaf->data.hasWon(1))) {
+            if ((leaf->data.hasWon(0)||leaf->data.hasWon(1))) {
                 minLeaf = leaf;
             }
+            if (leaf->data.hasWon(playerNum)) {
+                minLeaf = leaf;
+            } 
         }
     }
     
     return minLeaf;
 }
-Vec aiMove(Node* root, int playerNum = 0) {
+Vec aiMove(Node* root, int playerNum = 1) {
     Node* poggers = findMinHeight(root, playerNum);
     Vec thing = Vec(poggers->imoves[0], poggers->jmoves[0]);
     return thing;
