@@ -87,7 +87,7 @@ struct mainMenu{
         xWinsPvAI = 0;
         oWinsPvAI = 0;
         tiesPvAI = 0;
-        cout << "Stats have been cleared\n";
+        cout << "Stats have been cleared. . .\n";
     }
 
     // get total games played
@@ -149,6 +149,86 @@ struct mainMenu{
     int getTiesPvAI(){ 
         return tiesPvAI;
     }
+
+    // update functions
+    void updateGamesPlayedPVP(){ 
+        gamesPlayedPVP++;
+        gamesPlayedRegular++;
+    }
+
+    void updateGamesPlayedPvAI(){ 
+        gamesPlayedPvAI++;
+        gamesPlayedRegular++;
+    }
+
+    void updateXWinsPVP(){ 
+        xWinsPVP++;
+        xWinsRegular++;
+    }
+
+    void updateOWinsPVP(){ 
+        oWinsPVP++;
+        oWinsRegular++;
+    }
+
+    void updateTiesPVP(){ 
+        tiesPVP++;
+        tiesRegular++;
+    }
+
+    void updateTiesPvAI(){ 
+        tiesPvAI++;
+        tiesRegular++;
+    }
+
+    void updateXWinsPvAI(){ 
+        xWinsPvAI++;
+        xWinsRegular++;
+    }
+
+    void updateOWinsPvAI(){ 
+        oWinsPvAI++;
+        oWinsRegular++;
+    }
+
+    // display gameStats
+    void gameStats(){ 
+        system("clear");
+        cout << "Game Statistics" << endl;
+        cout << "----------------" << endl;
+        cout << "Total Games Played: " << gamesPlayedRegular << endl;
+        cout << "X Wins: " << xWinsRegular << endl;
+        cout << "O Wins: " << oWinsRegular << endl;
+        cout << "Ties: " << tiesRegular << endl;
+        cout << "Win Percentage: " << calculateWinPercentage() << endl;
+        cout << "Tie Percentage: " << calculateTiePercentage() << endl;
+        cout << "----------------" << endl;
+        cout << "PVP Games Played: " << gamesPlayedPVP << endl;
+        cout << "X Wins: " << xWinsPVP << endl;
+        cout << "O Wins: " << oWinsPVP << endl;
+        cout << "Ties: " << tiesPVP << endl;
+        cout << "Win Percentage: " << calculateWinPercentagePVP() << endl;
+        cout << "Tie Percentage: " << calculateTiePercentagePVP() << endl;
+        cout << "----------------" << endl;
+        cout << "PvAI Games Played: " << gamesPlayedPvAI << endl;
+        cout << "X Wins: " << xWinsPvAI << endl;
+        cout << "O Wins: " << oWinsPvAI << endl;
+        cout << "Ties: " << tiesPvAI << endl;
+        cout << "Win Percentage: " << calculateWinPercentagePvAI() << endl;
+        cout << "Tie Percentage: " << calculateTiePercentagePvAI() << endl;
+        cout << "----------------" << endl;
+    
+    }
+
+    // enter to continue function
+    void enterToContinue(){ 
+        cout << "Press Enter to Continue...";
+        cin.ignore();
+        cin.get();
+    }
+
+    // friend << overloaded operator
+    friend ostream& operator<<(ostream& os, mainMenu& menu);
 
 };
 
