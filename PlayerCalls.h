@@ -4,11 +4,12 @@
 #include "GameState.h"
 #include "StrongAI.h"
 #include "WeakAI.h"
+#include "mainMenu.h"
 
 using namespace std;
 
 // 2 Player
-GameState p2(GameState game){
+GameState p2(GameState game, mainMenu menu){
     while(!game.done){
         system("clear");
         cout << game << endl;
@@ -32,11 +33,26 @@ GameState p2(GameState game){
     system("clear");
     cout << game << endl;
 
+    // Observe who won and update stats
+    if (game.hasWon(0)){
+        cout << "Player X has won" << endl;
+        menu.updateXWinsPVP();
+    }
+
+    else if (game.hasWon(1)){
+        cout << "Player O has won" << endl;
+        menu.updateOWinsPVP();
+    }
+    else {
+        menu.updateTiesPVP();
+        cout << "It's a tie" << endl;
+    }
+
     return game;
 }
 
 // 1 Player Weak
-GameState p1w(GameState game){
+GameState p1w(GameState game, mainMenu menu){
     while(!game.done){
         system("clear");
         cout << game << endl;
@@ -59,11 +75,27 @@ GameState p1w(GameState game){
     // display final game state
     system("clear");
     cout << game << endl;
+
+    // Observe who won and update stats
+    if (game.hasWon(0)){
+        cout << "Player X has won" << endl;
+        menu.updateXWinsPvAI();
+    }
+
+    else if (game.hasWon(1)){
+        cout << "Player O has won" << endl;
+        menu.updateOWinsPvAI();
+    }
+    else {
+        menu.updateTiesPvAI();
+        cout << "It's a tie" << endl;
+    }
+
     return game;
 }
 
 // 1 Player Strong
-GameState p1s(GameState game){
+GameState p1s(GameState game, mainMenu menu){
     while(!game.done){
         system("clear");
         cout << game << endl;
@@ -103,6 +135,22 @@ GameState p1s(GameState game){
     // display final game state
     system("clear");
     cout << game << endl;
+
+    // Observe who won and update stats
+    if (game.hasWon(0)){
+        cout << "Player X has won" << endl;
+        menu.updateXWinsPvAI();
+    }
+
+    else if (game.hasWon(1)){
+        cout << "Player O has won" << endl;
+        menu.updateOWinsPvAI();
+    }
+    else {
+        menu.updateTiesPvAI();
+        cout << "It's a tie" << endl;
+    }
+    
     return game;
 }
 

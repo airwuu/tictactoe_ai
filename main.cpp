@@ -53,23 +53,9 @@ int main(){
         mainMenu menu;
         system("clear");
         cout << menu << endl;
-        menu.runGameType(gameType, game);
+        menu.runGameType(gameType, game, menu);
+
         keepGoing = menu.willContinue();
-    }
-
-    // After Game Finishes
-    system("clear");
-    cout << game << endl;
-    cout << endl;
-    if (game.hasWon(0)){
-        cout << "Player X has won" << endl;
-    }
-
-    else if (game.hasWon(1)){
-        cout << "Player O has won" << endl;
-    }
-    else {
-        cout << "It's a tie" << endl;
     }
     return 0;
 }

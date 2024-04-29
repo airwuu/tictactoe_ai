@@ -237,16 +237,16 @@ struct mainMenu{
     }
 
     // run game type conditional
-    void runGameType(int gameType, GameState& game){ 
+    void runGameType(int gameType, GameState& game, mainMenu& menu){ 
         switch(gameType) {
             case 1:
-                game = p2(game);
+                game = p2(game, menu);
                 break;
             case 2:
-                game = p1w(game);
+                game = p1w(game, menu);
                 break;
             case 3:
-                game = p1s(game);
+                game = p1s(game, menu);
                 break;
             case 4: // show game stats
                 gameStats();
@@ -263,6 +263,7 @@ struct mainMenu{
                 cout << "Invalid choice" << endl;
                 break;
         }
+
     }
 
 
