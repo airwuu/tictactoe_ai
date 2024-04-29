@@ -293,6 +293,7 @@ struct mainMenu{
                 clearStats();
                 break;
             case 6:
+                system("clear");
                 cout << "exiting . . ." << endl;
                 // exit program
                 exit(0);

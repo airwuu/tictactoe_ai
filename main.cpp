@@ -44,7 +44,6 @@ int main(){
 
         int gameType;
         gameType = theMenu(menu);
-        mainMenu menu;
         system("clear");
         cout << menu << endl;
         menu.runGameType(gameType, game, menu);
