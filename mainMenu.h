@@ -225,8 +225,8 @@ struct mainMenu{
     }
 
     // enter to continue function
-    void enterToContinue(){ 
-        cout << "Press Enter to Continue...";
+    int willContinue(){ 
+        cout << "Type 6 to exit or any other number to continue:";
         cin >> choice;
     }
 
@@ -250,6 +250,7 @@ struct mainMenu{
                 break;
             case 6:
                 cout << "exiting . . ." << endl;
+                exit;
                 break;
             default: 
                 cout << "Invalid choice" << endl;
