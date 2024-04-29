@@ -155,47 +155,6 @@ struct mainMenu{
         return tiesPvAI;
     }
 
-    // update functions
-    void updateGamesPlayedPVP(mainMenu menu){ 
-        menu.gamesPlayedPVP++;
-        gamesPlayedRegular++;
-    }
-
-    void updateGamesPlayedPvAI(){ 
-        gamesPlayedPvAI++;
-        gamesPlayedRegular++;
-    }
-
-    void updateXWinsPVP(){ 
-        xWinsPVP++;
-        xWinsRegular++;
-    }
-
-    void updateOWinsPVP(){ 
-        oWinsPVP++;
-        oWinsRegular++;
-    }
-
-    void updateTiesPVP(){ 
-        tiesPVP++;
-        tiesRegular++;
-    }
-
-    void updateTiesPvAI(){ 
-        tiesPvAI++;
-        tiesRegular++;
-    }
-
-    void updateXWinsPvAI(){ 
-        xWinsPvAI++;
-        xWinsRegular++;
-    }
-
-    void updateOWinsPvAI(){ 
-        oWinsPvAI++;
-        oWinsRegular++;
-    }
-
     // display gameStats
     void gameStats(){ 
         system("clear");
@@ -237,54 +196,62 @@ struct mainMenu{
         return 0;
     }
 
-    // observe winner
-    void theWinnerPVP(GameState game, mainMenu menu){ 
-            if (game.hasWon(0)){
-            cout << "Player X has won" << endl;
-            menu.updateXWinsPVP();
-        }
-
-        else if (game.hasWon(1)){
-            cout << "Player O has won" << endl;
-            menu.updateOWinsPVP();
-        }
-        else {
-            menu.updateTiesPVP();
-            cout << "It's a tie" << endl;
-        }
-    }
-
-    void theWinnerPvAI(GameState game, mainMenu menu){ 
-            if (game.hasWon(0)){
-            cout << "Player X has won" << endl;
-            menu.updateXWinsPvAI();
-        }
-
-        else if (game.hasWon(1)){
-            cout << "Player O has won" << endl;
-            menu.updateOWinsPvAI();
-        }
-        else {
-            menu.updateTiesPvAI();
-            cout << "It's a tie" << endl;
-        }
-    }
-    
-
     // run game type conditional
     void runGameType(int gameType, GameState& game, mainMenu& menu){ 
         switch(gameType) {
             case 1:
                 game = p2(game);
-                theWinnerPVP(game, menu);
+                // update stats
+                gamesPlayedRegular++;
+                gamesPlayedPVP++;
+                if(game.hasWon(0)){
+                    xWinsRegular++;
+                    xWinsPVP++;
+                }
+                else if(game.hasWon(1)){
+                    oWinsRegular++;
+                    oWinsPVP++;
+                }
+                else{
+                    tiesRegular++;
+                    tiesPVP++;
+                }
                 break;
             case 2:
                 game = p1w(game);
-                theWinnerPvAI(game, menu);
+                // update stats
+                gamesPlayedPvAI++;
+                gamesPlayedRegular++;
+                if(game.hasWon(0)){
+                    xWinsRegular++;
+                    xWinsPvAI++;
+                }
+                else if(game.hasWon(1)){
+                    oWinsRegular++;
+                    oWinsPvAI++;
+                }
+                else{
+                    tiesRegular++;
+                    tiesPvAI++;
+                }
                 break;
             case 3:
                 game = p1s(game);
-                theWinnerPvAI(game, menu);
+                // update stats
+                gamesPlayedPvAI++;
+                gamesPlayedRegular++;
+                if(game.hasWon(0)){
+                    xWinsRegular++;
+                    xWinsPvAI++;
+                }
+                else if(game.hasWon(1)){
+                    oWinsRegular++;
+                    oWinsPvAI++;
+                }
+                else{
+                    tiesRegular++;
+                    tiesPvAI++;
+                }
                 break;
             case 4: // show game stats
                 gameStats();
