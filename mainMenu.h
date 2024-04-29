@@ -7,6 +7,7 @@
 #include "GameState.h"
 #include "StrongAI.h"
 #include "WeakAI.h"
+#include "PlayerCalls.h"
 
 using namespace std;
 
