@@ -49,7 +49,7 @@ struct mainMenu{
 
     // Calculate the win percentage for the total game mode
     float calculateWinPercentage(){ 
-        return (xWinsRegular + oWinsRegular) / gamesPlayedRegular;
+        return xWinsRegular / gamesPlayedRegular;
     }
 
     // Calculate the tie percentage for the total game mode
@@ -59,7 +59,7 @@ struct mainMenu{
 
     // Calculate the win percentage for the PVP game mode
     float calculateWinPercentagePVP(){ 
-        return (xWinsPVP + oWinsPVP) / gamesPlayedPVP;
+        return xWinsPVP / gamesPlayedPVP;
     }
 
     // Calculate the tie percentage for the PVP game mode
@@ -69,7 +69,7 @@ struct mainMenu{
 
     // Calculate the win percentage for the PvAI game mode
     float calculateWinPercentagePvAI(){ 
-        return (xWinsPvAI + oWinsPvAI) / gamesPlayedPvAI;
+        return xWinsPvAI / gamesPlayedPvAI;
     }
 
     // Calculate the tie percentage for the PvAI game mode
@@ -164,21 +164,21 @@ struct mainMenu{
         cout << "X Wins: " << xWinsRegular << endl;
         cout << "O Wins: " << oWinsRegular << endl;
         cout << "Ties: " << tiesRegular << endl;
-        cout << "Win Percentage: " << calculateWinPercentage() << endl;
+        cout << "X Win Percentage: " << calculateWinPercentage() << endl;
         cout << "Tie Percentage: " << calculateTiePercentage() << endl;
         cout << "----------------" << endl;
         cout << "PVP Games Played: " << gamesPlayedPVP << endl;
         cout << "X Wins: " << xWinsPVP << endl;
         cout << "O Wins: " << oWinsPVP << endl;
         cout << "Ties: " << tiesPVP << endl;
-        cout << "Win Percentage: " << calculateWinPercentagePVP() << endl;
+        cout << "X Win Percentage: " << calculateWinPercentagePVP() << endl;
         cout << "Tie Percentage: " << calculateTiePercentagePVP() << endl;
         cout << "----------------" << endl;
         cout << "PvAI Games Played: " << gamesPlayedPvAI << endl;
         cout << "X Wins: " << xWinsPvAI << endl;
         cout << "O Wins: " << oWinsPvAI << endl;
         cout << "Ties: " << tiesPvAI << endl;
-        cout << "Win Percentage: " << calculateWinPercentagePvAI() << endl;
+        cout << "X Win Percentage: " << calculateWinPercentagePvAI() << endl;
         cout << "Tie Percentage: " << calculateTiePercentagePvAI() << endl;
         cout << "----------------" << endl;
     
