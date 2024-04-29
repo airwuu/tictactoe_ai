@@ -120,35 +120,37 @@ int main(){
     gameType = theMenu(menu);
 
     // Run Game Type
-    switch(gameType) {
-        case 1:
-            game = p2(game);
-            menu.enterToContinue();
-            break;
-        case 2:
-            game = p1w(game);
-            menu.enterToContinue();
-            break;
-        case 3:
-            game = p1s(game);
-            menu.enterToContinue();
-            break;
-        case 4: // show game stats
-            menu.gameStats();
-            menu.enterToContinue();
-            break;
-        case 5: // clear game stats
-            menu.clearStats();
-            menu.enterToContinue();
-            break;
-        case 6:
-            cout << "Exiting. . . Goodbye!" << endl;
-            return 0;
-        default:
-            cout << "Invalid choice. Please try again." << endl;
-            menu.enterToContinue();
-            break;
-    } while (gameType != 5);
+    while(gameType != 6){
+        switch(gameType) {
+            case 1:
+                game = p2(game);
+                menu.enterToContinue();
+                break;
+            case 2:
+                game = p1w(game);
+                menu.enterToContinue();
+                break;
+            case 3:
+                game = p1s(game);
+                menu.enterToContinue();
+                break;
+            case 4: // show game stats
+                menu.gameStats();
+                menu.enterToContinue();
+                break;
+            case 5: // clear game stats
+                menu.clearStats();
+                menu.enterToContinue();
+                break;
+            case 6:
+                cout << "Exiting. . . Goodbye!" << endl;
+                break;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+                menu.enterToContinue();
+                break;
+        }
+    }
 
     // After Game Finishes
     system("clear");
